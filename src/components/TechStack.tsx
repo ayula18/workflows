@@ -69,7 +69,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="font-mono w-32 h-32 rounded-xl border-2 border-[var(--accent)] bg-[var(--accent)]/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(0,240,255,0.2)]"
+                                className="font-mono w-32 h-32 rounded-xl border-2 border-[var(--accent)] bg-[var(--accent)]/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(160,232,230,0.2)]"
                             >
                                 <span className="text-[var(--accent)] mb-2">{labels.core}</span>
                                 {labels.coreSubtext && <span className="text-[9px] opacity-60">{labels.coreSubtext}</span>}

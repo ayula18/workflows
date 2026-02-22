@@ -16,8 +16,14 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kapture GTM | AI Automation Architecture",
-  description: "Automate your Go-To-Market strategy with AI-powered workflows.",
+  title: "Ayush Lahoti | Founder's Office & Business Generalist",
+  description: "Portfolio of Ayush Lahoti. Ex-founder and strategic operator specializing in GTM strategy, stakeholder management, and AI workflow design for high-growth startups.",
+  keywords: ["Founder's Office", "Business Generalist", "GTM Strategy", "AI Automation", "Product Operations", "Ayush Lahoti"],
+  openGraph: {
+    title: "Ayush Lahoti | Founder's Office & Business Generalist",
+    description: "Ex-founder and strategic operator bridging the gap between business and technical execution.",
+    type: "website",
+  }
 };
 
 export default function RootLayout({
