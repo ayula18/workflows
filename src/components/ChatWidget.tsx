@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Bot } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
     id: string;
@@ -230,7 +232,15 @@ export default function ChatWidget() {
                                                 }
                                         }
                                     >
-                                        {msg.text}
+                                        {msg.role === "bot" ? (
+                                            <div className="prose prose-invert max-w-none text-[13.5px] leading-relaxed prose-p:mb-2 prose-p:last:mb-0 prose-ul:my-1 prose-ul:pl-4 prose-li:my-0 prose-a:text-[var(--accent)] hover:prose-a:underline prose-pre:bg-black/20 prose-pre:border prose-pre:border-white/10">
+                                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                    {msg.text}
+                                                </ReactMarkdown>
+                                            </div>
+                                        ) : (
+                                            msg.text
+                                        )}
                                         <span className="mt-1 block text-[10px] text-white/30 text-right">
                                             {formatTime(msg.timestamp)}
                                         </span>
