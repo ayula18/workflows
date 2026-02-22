@@ -50,7 +50,7 @@ export default async function AutomationPage({ params }: PageProps) {
 
                 <div className="mb-6 flex gap-2">
                     {automation.tags.map((tag, i) => (
-                        <span key={i} className="text-xs font-bold px-2 py-1 rounded-full bg-white/5 border border-white/10 uppercase tracking-wider opacity-70">
+                        <span key={i} className="font-mono text-[10px] font-medium px-2.5 py-1 rounded-full bg-white/5 border border-white/10 uppercase tracking-wider opacity-70">
                             {tag}
                         </span>
                     ))}

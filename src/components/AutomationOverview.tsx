@@ -40,8 +40,8 @@ export default function AutomationOverview({
                                 {i === 0 ? <Clock className="w-6 h-6" /> : i === 1 ? <Zap className="w-6 h-6" /> : <TrendingUp className="w-6 h-6" />}
                             </div>
                             <div>
-                                <h3 className="text-3xl font-bold">{metric.value}</h3>
-                                <p className="text-sm opacity-60">{metric.label}</p>
+                                <h3 className="font-mono text-3xl font-bold">{metric.value}</h3>
+                                <p className="font-mono text-sm opacity-60">{metric.label}</p>
                             </div>
                         </div>
                     ))}
@@ -78,8 +78,8 @@ export default function AutomationOverview({
                                             {i === 0 ? <Clock className="w-4 h-4" /> : <Zap className="w-4 h-4" />}
                                         </div>
                                         <div>
-                                            <span className="text-xl font-bold">{metric.value}</span>
-                                            <p className="text-xs opacity-60">{metric.label}</p>
+                                            <span className="font-mono text-xl font-bold">{metric.value}</span>
+                                            <p className="font-mono text-xs opacity-60">{metric.label}</p>
                                         </div>
                                     </div>
                                 ))}

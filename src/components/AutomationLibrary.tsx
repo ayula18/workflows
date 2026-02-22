@@ -19,10 +19,10 @@ export default function AutomationLibrary() {
         <SectionWrapper id="library" className="py-20">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                    Automation <span className="text-gradient">Library</span>
+                    Proof of Work: <span className="text-gradient">Systems & Automations</span>
                 </h2>
-                <p className="text-xl opacity-60 max-w-2xl mx-auto">
-                    Production-ready workflows designed to scale revenue engines.
+                <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    A selection of operational bottlenecks I&apos;ve solved through strategic workflow design and AI implementation.
                 </p>
             </div>
 
