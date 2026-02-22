@@ -4,7 +4,7 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
 
-        const response = await fetch('https://n8n.mesaschool.co.in/webhook-test/e428ec57-27b9-439e-acb1-56a1de38f1be', {
+        const response = await fetch('https://n8n.mesaschool.co.in/webhook/e428ec57-27b9-439e-acb1-56a1de38f1be', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
