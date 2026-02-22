@@ -60,8 +60,8 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                             </motion.div>
 
                             {/* Arrow */}
-                            <div className="h-0.5 w-8 md:w-16 bg-[var(--accent)] relative">
-                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-[var(--accent)] rotate-45" />
+                            <div className="h-0.5 w-8 md:w-16 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] relative">
+                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-[var(--accent-secondary)] rotate-45" />
                             </div>
 
                             {/* Processing */}
@@ -76,8 +76,8 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                             </motion.div>
 
                             {/* Arrow */}
-                            <div className="h-0.5 w-8 md:w-16 bg-[var(--accent)] relative">
-                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-[var(--accent)] rotate-45" />
+                            <div className="h-0.5 w-8 md:w-16 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] relative">
+                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-[var(--accent-secondary)] rotate-45" />
                             </div>
 
                             {/* Output */}

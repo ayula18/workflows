@@ -52,7 +52,7 @@ export default function Hero() {
                     <div className="flex mt-20 flex-col sm:flex-row gap-4 justify-center items-center">
                         <a
                             href="#library"
-                            className="px-8 py-3.5 rounded-full bg-[var(--accent)] text-black font-semibold text-sm hover:opacity-90 transition-opacity"
+                            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] text-black font-semibold text-sm hover:opacity-90 hover:shadow-[0_0_20px_rgba(160,232,230,0.4)] transition-all"
                         >
                             View Proof of Work
                         </a>

@@ -36,7 +36,7 @@ export default function AutomationOverview({
                 <div className="relative z-10 grid gap-8">
                     {metrics.map((metric, i) => (
                         <div key={i} className="flex items-center gap-4">
-                            <div className={`p-3 rounded-xl ${i === 0 ? 'bg-[var(--accent)]/20 text-[var(--accent)]' : i === 1 ? 'bg-[var(--accent-secondary)]/20 text-[var(--accent-secondary)]' : 'bg-purple-500/20 text-purple-400'}`}>
+                            <div className={`p-3 rounded-xl border border-white/10 ${i === 0 ? 'bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent)]/5 text-[var(--accent)]' : i === 1 ? 'bg-gradient-to-br from-[var(--accent-secondary)]/20 to-[var(--accent-secondary)]/5 text-[var(--accent-secondary)]' : 'bg-gradient-to-br from-purple-500/20 to-purple-500/5 text-purple-400'}`}>
                                 {i === 0 ? <Clock className="w-6 h-6" /> : i === 1 ? <Zap className="w-6 h-6" /> : <TrendingUp className="w-6 h-6" />}
                             </div>
                             <div>
@@ -74,7 +74,7 @@ export default function AutomationOverview({
                             <div className="flex flex-wrap gap-4 pt-2">
                                 {metrics.map((metric, i) => (
                                     <div key={i} className="flex items-center gap-3 glass-panel rounded-xl px-5 py-3">
-                                        <div className={`p-2 rounded-lg ${i === 0 ? 'bg-[var(--accent)]/20 text-[var(--accent)]' : 'bg-[var(--accent-secondary)]/20 text-[var(--accent-secondary)]'}`}>
+                                        <div className={`p-2 rounded-lg border border-white/10 ${i === 0 ? 'bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent)]/5 text-[var(--accent)]' : 'bg-gradient-to-br from-[var(--accent-secondary)]/20 to-[var(--accent-secondary)]/5 text-[var(--accent-secondary)]'}`}>
                                             {i === 0 ? <Clock className="w-4 h-4" /> : <Zap className="w-4 h-4" />}
                                         </div>
                                         <div>

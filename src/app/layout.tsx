@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ChatWidget from "@/components/ChatWidget";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <ChatWidget />
       </body>
     </html>
   );

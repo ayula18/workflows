@@ -11,6 +11,15 @@ interface BeforeAfterProps {
 export default function BeforeAfter({ before, after }: BeforeAfterProps) {
     return (
         <SectionWrapper id="comparison">
+            <svg width="0" height="0" className="absolute">
+                <defs>
+                    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop stopColor="var(--accent)" offset="0%" />
+                        <stop stopColor="var(--accent-secondary)" offset="100%" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
                 Before vs <span className="text-gradient">After</span>
             </h2>
@@ -35,8 +44,8 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
                 </div>
 
                 {/* After Card */}
-                <div className="glass-panel p-8 rounded-2xl border-[var(--accent)]/30 relative overflow-hidden bg-[var(--accent)]/5">
-                    <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                <div className="glass-panel p-8 rounded-2xl border-white/10 relative overflow-hidden bg-gradient-to-br from-[var(--accent)]/5 to-[var(--accent-secondary)]/5">
+                    <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r from-[var(--accent)]/10 to-[var(--accent-secondary)]/10 text-white border border-white/10">
                         AUTOMATED
                     </div>
 
@@ -45,7 +54,7 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
                     <ul className="space-y-4">
                         {after.map((item, i) => (
                             <li key={i} className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-[var(--accent)] shrink-0 mt-0.5" />
+                                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" stroke="url(#accent-gradient)" />
                                 <span className="text-[var(--foreground)]">{item}</span>
                             </li>
                         ))}

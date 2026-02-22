@@ -25,7 +25,7 @@ export default function HowItWorks({ steps }: HowItWorksProps) {
 
             <div className="relative">
                 {/* Connecting Line (Desktop) */}
-                <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20" />
+                <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--accent-secondary)] to-transparent opacity-30" />
 
                 <div className="grid md:grid-cols-4 gap-8">
                     {steps.map((step, index) => (
@@ -40,11 +40,11 @@ export default function HowItWorks({ steps }: HowItWorksProps) {
                             <div className="flex flex-col items-center text-center">
                                 <div className="w-24 h-24 rounded-full bg-[var(--background)] border border-[var(--card-border)] flex items-center justify-center mb-6 relative z-10 group-hover:border-[var(--accent)] transition-colors duration-300">
                                     <div className="w-20 h-20 rounded-full bg-[var(--card-bg)] flex items-center justify-center">
-                                        <span className="text-2xl font-bold font-mono text-[var(--accent)]">{index + 1}</span>
+                                        <span className="text-2xl font-bold font-mono text-gradient">{index + 1}</span>
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--accent)] transition-colors">{step.title}</h3>
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[var(--accent)] group-hover:to-[var(--accent-secondary)] transition-all duration-300">{step.title}</h3>
                                 <p className="text-sm text-[var(--foreground)] opacity-60 leading-relaxed">
                                     {step.description}
                                 </p>

@@ -52,7 +52,7 @@ export default function CallToAction() {
 
                     {/* Right: GSAP Animated Text */}
                     <div className="flex flex-col items-end text-right">
-                        <p className="font-mono text-xs uppercase tracking-widest text-[var(--accent)] mb-4 opacity-70">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.3em] font-bold text-gradient mb-4 opacity-90">
                             Fueled by
                         </p>
                         <AnimatedText />

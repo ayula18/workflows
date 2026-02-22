@@ -9,7 +9,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     <Briefcase className="w-5 h-5 text-[var(--accent)] group-hover:rotate-[-6deg] transition-transform" />
-                    <span className="font-bold text-lg tracking-tight">Ayush <span className="text-[var(--accent)]">Lahoti</span></span>
+                    <span className="font-bold text-lg tracking-tight">Ayush <span className="text-gradient font-bold">Lahoti</span></span>
                 </Link>
 
                 <nav className="flex gap-6">
@@ -32,7 +32,7 @@ export default function Navbar() {
                     </a>
                     <a
                         href="mailto:ayush_lahoti@pg26.mesaschool.co"
-                        className="px-4 py-2 text-sm font-semibold rounded-full bg-[var(--accent)] text-black hover:opacity-90 transition-colors"
+                        className="px-4 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] text-black hover:opacity-90 hover:shadow-[0_0_15px_rgba(160,232,230,0.4)] transition-all"
                     >
                         Connect
                     </a>
