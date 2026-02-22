@@ -12,7 +12,7 @@ export default function CallToAction() {
                     {/* Left: CTA + Links */}
                     <div className="flex flex-col items-start gap-8">
                         <div className="text-left">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-white">
                                 Let&apos;s discuss your <br />
                                 <span className="text-gradient">next bottleneck.</span>
                             </h2>

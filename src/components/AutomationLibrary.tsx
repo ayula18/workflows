@@ -18,7 +18,7 @@ export default function AutomationLibrary() {
     return (
         <SectionWrapper id="library" className="py-20">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">
                     Proof of Work: <span className="text-gradient">Systems & Automations</span>
                 </h2>
                 <p className="text-xl text-gray-400 max-w-2xl mx-auto">

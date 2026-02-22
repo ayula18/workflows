@@ -24,7 +24,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
         <SectionWrapper id="stack">
             <div className="grid lg:grid-cols-5 gap-12 items-center">
                 <div className="lg:col-span-2">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
                         Under the <br /> <span className="text-gradient">hood</span>
                     </h2>
                     <p className="text-lg opacity-70 mb-8">
@@ -48,13 +48,13 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                         {/* Abstract Architecture Diagram */}
                         <div className="absolute inset-0 bg-grid-white/[0.02]" />
 
-                        <div className="relative z-10 flex items-center gap-4 md:gap-8">
+                        <div className="relative z-10 flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar pb-4 w-full px-2">
                             {/* Source */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.1 }}
-                                className="font-mono w-24 h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
+                                className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
                             >
                                 {labels.source}
                             </motion.div>
@@ -69,7 +69,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="font-mono w-32 h-32 rounded-xl border-2 border-[var(--accent)] bg-[var(--accent)]/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(160,232,230,0.2)]"
+                                className="font-mono shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-xl border-2 border-[var(--accent)] bg-[var(--accent)]/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(160,232,230,0.2)]"
                             >
                                 <span className="text-[var(--accent)] mb-2">{labels.core}</span>
                                 {labels.coreSubtext && <span className="text-[9px] opacity-60">{labels.coreSubtext}</span>}
@@ -85,7 +85,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="font-mono w-24 h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
+                                className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
                             >
                                 {labels.output}
                             </motion.div>

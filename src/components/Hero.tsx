@@ -40,7 +40,7 @@ export default function Hero() {
                         Business Generalist | Founders Office | AI Automation Expert
                     </p>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.05] tracking-tight text-white">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.05] tracking-tight text-white">
                         I&apos;m Ayush Lahoti <br />
 
                     </h1>

@@ -55,7 +55,7 @@ export default function AutomationOverview({
         return (
             <SectionWrapper id="overview">
                 <div className="mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
                         <span className="text-gradient">{title}</span>
                     </h2>
                 </div>
