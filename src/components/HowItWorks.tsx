@@ -34,7 +34,7 @@ export default function HowItWorks({ steps }: HowItWorksProps) {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2, duration: 0.5 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "-100px" }}
                             className="relative group"
                         >
                             <div className="flex flex-col items-center text-center">

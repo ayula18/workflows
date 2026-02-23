@@ -43,7 +43,7 @@ export default function AutomationsPage() {
                             </div>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {items.map(automation => (
-                                    <AutomationCard key={automation.slug} automation={automation} />
+                                    <AutomationCard key={automation.slug} {...automation} />
                                 ))}
                             </div>
                         </div>
