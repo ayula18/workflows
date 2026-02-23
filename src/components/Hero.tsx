@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import TypewriterHeading from "./TypewriterHeading";
 
 const Prism = dynamic(() => import("@/components/animations/Prism"), {
     ssr: false,
@@ -41,10 +42,7 @@ export default function Hero() {
                         Business Generalist | Founders Office | AI Automation Expert
                     </p>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.05] tracking-tight text-white">
-                        I&apos;m Ayush Lahoti <br />
-
-                    </h1>
+                    <TypewriterHeading />
 
                     <p className="text-lg md:text-lg text-white/50 max-w-2xl mx-auto mb-5 leading-relaxed">
                         Business Generalist with a track record of taking 0&rarr;1 products to market and streamlining sales engines. I combine strategic problem-solving with advanced AI workflow design to help founders scale operations and drive revenue.

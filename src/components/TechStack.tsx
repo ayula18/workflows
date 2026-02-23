@@ -25,7 +25,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
             <div className="grid lg:grid-cols-5 gap-12 items-center">
                 <div className="lg:col-span-2">
                     <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
-                        Under the <br /> <span className="text-gradient">hood</span>
+                        Under the <span className="text-gradient">hood</span>
                     </h2>
                     <p className="text-lg opacity-70 mb-8">
                         Built with modern, scalable low-code tools and enterprise-grade APIs to ensure reliability and speed.

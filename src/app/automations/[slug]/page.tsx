@@ -66,7 +66,7 @@ export default async function AutomationPage({ params }: PageProps) {
                                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                                     {automation.title}
                                 </h1>
-                                <p className="text-xl md:text-2xl opacity-60 max-w-3xl">
+                                <p className="text-xl md:text-1xl opacity-60 max-w-3xl">
                                     {automation.description}
                                 </p>
                             </div>
@@ -83,7 +83,7 @@ export default async function AutomationPage({ params }: PageProps) {
                         </div>
 
                         {/* Right Column (Sticky Video Container) */}
-                        <div className="lg:sticky lg:top-36 lg:h-fit lg:pt-[104px]">
+                        <div className="lg:sticky lg:top-36 lg:h-fit lg:pt-8">
                             <h3 className="text-sm font-bold uppercase tracking-wider opacity-50 mb-3">Quick Video Demo</h3>
                             <div className="glass-panel rounded-2xl p-2 relative overflow-hidden border border-white/10 shadow-2xl">
                                 <div style={{ position: "relative", paddingBottom: "62.5%", height: 0 }}>
