@@ -43,6 +43,13 @@ export default function ChatWidget() {
         }
     }, [isOpen]);
 
+    // specific handler for external components to trigger opening the chat box
+    useEffect(() => {
+        const handleOpenChat = () => setIsOpen(true);
+        window.addEventListener('open-chat-widget', handleOpenChat);
+        return () => window.removeEventListener('open-chat-widget', handleOpenChat);
+    }, []);
+
     const sendMessage = async (e: FormEvent) => {
         e.preventDefault();
         const trimmed = input.trim();

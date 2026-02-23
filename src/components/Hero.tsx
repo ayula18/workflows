@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Bot } from "lucide-react";
 import TypewriterHeading from "./TypewriterHeading";
 
 const Prism = dynamic(() => import("@/components/animations/Prism"), {
@@ -49,18 +49,16 @@ export default function Hero() {
                     </p>
 
                     <div className="flex mt-20 flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a
-                            href="#library"
-                            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] text-black font-semibold text-sm hover:opacity-90 hover:shadow-[0_0_20px_rgba(160,232,230,0.4)] transition-all"
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.dispatchEvent(new CustomEvent('open-chat-widget'));
+                            }}
+                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white font-semibold text-sm hover:border-white/20 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                         >
-                            View Proof of Work
-                        </a>
-                        <a
-                            href="mailto:ayush_lahoti@pg26.mesaschool.co"
-                            className="px-8 py-3.5 rounded-full border border-white/15 bg-white/5 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/25 transition-all"
-                        >
-                            Hire Me
-                        </a>
+                            <Bot size={18} className="mr-2 opacity-80" />
+                            Talk to my AI
+                        </button>
                     </div>
                 </motion.div>
             </div>
