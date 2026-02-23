@@ -48,7 +48,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                         {/* Abstract Architecture Diagram */}
                         <div className="absolute inset-0 bg-grid-white/[0.02]" />
 
-                        <div className="relative z-10 flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar pb-4 w-full px-2">
+                        <div className="relative z-10 flex items-center justify-center gap-4 md:gap-8 overflow-x-auto no-scrollbar pb-4 w-full px-2">
                             {/* Source */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
@@ -69,9 +69,9 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="font-mono shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-xl border-2 border-[var(--accent)] bg-[var(--accent)]/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(160,232,230,0.2)]"
+                                className="font-mono shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-xl border-2 border-emerald-400 bg-emerald-400/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(52,211,153,0.2)]"
                             >
-                                <span className="text-[var(--accent)] mb-2">{labels.core}</span>
+                                <span className={`text-emerald-400 ${labels.coreSubtext ? 'mb-2' : ''}`}>{labels.core}</span>
                                 {labels.coreSubtext && <span className="text-[9px] opacity-60">{labels.coreSubtext}</span>}
                             </motion.div>
 

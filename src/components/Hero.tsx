@@ -61,7 +61,7 @@ export default function Hero() {
                             href="mailto:ayush_lahoti@pg26.mesaschool.co"
                             className="px-8 py-3.5 rounded-full border border-white/15 bg-white/5 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/25 transition-all"
                         >
-                            Let&apos;s Connect
+                            Hire Me
                         </a>
                     </div>
                 </motion.div>

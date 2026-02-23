@@ -50,6 +50,44 @@ export default function AutomationOverview({
         );
     };
 
+    // Layout when video is extracted to a parent sticky container
+    if (loomVideoUrl === "hidden") {
+        return (
+            <div id="overview" className="mt-12 lg:mt-24 pb-12">
+                <div className="mb-12">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
+                        <span className="text-gradient">{title}</span>
+                    </h2>
+                </div>
+
+                <div className="space-y-6">
+                    <div className="space-y-4 text-lg text-[var(--foreground)] opacity-80">
+                        {problemTitle && <h3 className="text-xl font-bold text-white">{problemTitle}</h3>}
+                        {problemDescription && <p>{problemDescription}</p>}
+                        {solutionDescription && <p>{solutionDescription}</p>}
+                    </div>
+
+                    {/* Compact inline metrics */}
+                    {metrics && metrics.length > 0 && (
+                        <div className="flex flex-wrap gap-4 pt-2">
+                            {metrics.map((metric, i) => (
+                                <div key={i} className="flex items-center gap-3 glass-panel rounded-xl px-5 py-3">
+                                    <div className={`p-2 rounded-lg border border-white/10 ${i === 0 ? 'bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent)]/5 text-[var(--accent)]' : 'bg-gradient-to-br from-[var(--accent-secondary)]/20 to-[var(--accent-secondary)]/5 text-[var(--accent-secondary)]'}`}>
+                                        {i === 0 ? <Clock className="w-4 h-4" /> : <Zap className="w-4 h-4" />}
+                                    </div>
+                                    <div>
+                                        <span className="font-mono text-xl font-bold">{metric.value}</span>
+                                        <p className="font-mono text-xs opacity-60">{metric.label}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+        );
+    }
+
     // Video layout: text + metrics on left, Loom video on right
     if (loomVideoUrl) {
         return (

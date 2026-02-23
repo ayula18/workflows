@@ -44,17 +44,17 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
                 </div>
 
                 {/* After Card */}
-                <div className="glass-panel p-8 rounded-2xl border-white/10 relative overflow-hidden bg-gradient-to-br from-[var(--accent)]/5 to-[var(--accent-secondary)]/5">
-                    <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r from-[var(--accent)]/10 to-[var(--accent-secondary)]/10 text-white border border-white/10">
+                <div className="glass-panel p-8 rounded-2xl border-emerald-500/20 relative overflow-hidden bg-gradient-to-br from-emerald-500/5 to-emerald-400/5">
+                    <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                         AUTOMATED
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-6 text-[var(--accent)]">The Automated Way</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-emerald-400">The Automated Way</h3>
 
                     <ul className="space-y-4">
                         {after.map((item, i) => (
                             <li key={i} className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" stroke="url(#accent-gradient)" />
+                                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-emerald-500" />
                                 <span className="text-[var(--foreground)]">{item}</span>
                             </li>
                         ))}
