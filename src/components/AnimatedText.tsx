@@ -1,17 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useInView } from "framer-motion";
 import gsap from "gsap";
 
 const WORDS = ["Perspective", "Creativity", "Innovation"];
 
 export default function AnimatedText() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
     useEffect(() => {
-        if (!containerRef.current || !isInView) return;
+        if (!containerRef.current) return;
 
         const words = containerRef.current.querySelectorAll<HTMLHeadingElement>(".gsap-word");
 

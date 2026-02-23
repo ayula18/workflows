@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import DynamicChatWidgetWrapper from "@/components/DynamicChatWidgetWrapper";
+import ChatWidget from "@/components/ChatWidget";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <DynamicChatWidgetWrapper />
+        <ChatWidget />
       </body>
     </html>
   );

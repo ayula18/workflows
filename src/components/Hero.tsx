@@ -24,7 +24,6 @@ export default function Hero() {
                     colorFrequency={1}
                     timeScale={0.5}
                     transparent
-                    suspendWhenOffscreen={true}
                 />
                 {/* Dark overlay for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--background)]/60 via-transparent to-[var(--background)]" />

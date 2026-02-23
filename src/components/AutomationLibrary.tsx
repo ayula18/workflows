@@ -39,7 +39,7 @@ export default function AutomationLibrary() {
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {items.map(automation => (
-                                <AutomationCard key={automation.slug} {...automation} />
+                                <AutomationCard key={automation.slug} automation={automation} />
                             ))}
                         </div>
                     </div>

@@ -53,7 +53,6 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
                                 transition={{ delay: 0.1 }}
                                 className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
                             >
@@ -69,7 +68,6 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
                                 transition={{ delay: 0.3 }}
                                 className="font-mono shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-xl border-2 border-[var(--accent)] bg-[var(--accent)]/10 flex flex-col items-center justify-center text-xs font-bold text-center p-2 shadow-[0_0_30px_rgba(160,232,230,0.2)]"
                             >
@@ -86,7 +84,6 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
                                 transition={{ delay: 0.5 }}
                                 className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
                             >
