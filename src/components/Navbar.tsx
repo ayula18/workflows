@@ -1,11 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Navbar() {
+    const { scrollY } = useScroll();
+
+    // Map scroll position from 0 to 120px.
+    // 0px = 1280px wide
+    // 120px (and beyond) = 1024px wide
+    const maxWidth = useTransform(scrollY, [0, 120], ["1280px", "1024px"]);
+
     return (
         <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">
-            <div className="w-full max-w-5xl h-16 flex items-center justify-between relative bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-full px-4 sm:px-6">
+            <motion.div
+                className="w-full h-16 flex items-center justify-between relative bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-full px-4 sm:px-6"
+                style={{ maxWidth }}
+            >
 
                 {/* Left Side */}
                 <div className="flex-1 flex justify-start">
@@ -56,7 +67,7 @@ export default function Navbar() {
                         Hire Me
                     </a>
                 </div>
-            </div>
+            </motion.div>
         </header>
     );
 }
