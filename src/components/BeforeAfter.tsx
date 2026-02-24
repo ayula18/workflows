@@ -27,11 +27,12 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {/* Before Card */}
                 <div className="glass-panel p-8 rounded-2xl border-red-500/20 relative overflow-hidden">
-                    <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-red-500/10 text-red-500 border border-red-500/20">
-                        MANUAL
+                    <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-2xl font-bold text-white">The Old Way</h3>
+                        <div className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 tracking-wider whitespace-nowrap">
+                            MANUAL
+                        </div>
                     </div>
-
-                    <h3 className="text-2xl font-bold mb-6 text-red-400">The Old Way</h3>
 
                     <ul className="space-y-4">
                         {before.map((item, i) => (
@@ -45,11 +46,12 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
 
                 {/* After Card */}
                 <div className="glass-panel p-8 rounded-2xl border-emerald-500/20 relative overflow-hidden bg-gradient-to-br from-emerald-500/5 to-emerald-400/5">
-                    <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        AUTOMATED
+                    <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-2xl font-bold text-white">The Automated Way</h3>
+                        <div className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 tracking-wider whitespace-nowrap">
+                            AUTOMATED
+                        </div>
                     </div>
-
-                    <h3 className="text-2xl font-bold mb-6 text-emerald-400">The Automated Way</h3>
 
                     <ul className="space-y-4">
                         {after.map((item, i) => (
