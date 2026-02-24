@@ -1,8 +1,12 @@
 "use client";
 
 import SectionWrapper from "./SectionWrapper";
-import AnimatedText from "./AnimatedText";
+import dynamic from "next/dynamic";
 import { Mail, Linkedin, FileDown } from "lucide-react";
+
+const AnimatedText = dynamic(() => import("./AnimatedText"), {
+    ssr: false,
+});
 
 export default function CallToAction() {
     return (

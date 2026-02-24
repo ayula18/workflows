@@ -2,18 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { automations } from "@/lib/data";
+import { automations, categories } from "@/lib/data";
 import AutomationCard from "@/components/AutomationCard";
 import DocumentCard, { type DocumentData } from "@/components/DocumentCard";
 import SectionWrapper from "@/components/SectionWrapper";
 
-const categories = [
-    { key: "Marketing & GTM", label: "Marketing & GTM Automations", badgeClass: "bg-gradient-to-r from-[var(--accent)]/20 to-[var(--accent-secondary)]/20 border border-[var(--accent)]/30 text-white" },
-    { key: "SaaS & Lead Gen", label: "SaaS & Lead Gen Automations", badgeClass: "bg-purple-500/20 text-purple-400" },
-    { key: "Fintech", label: "Fintech Automations", badgeClass: "bg-emerald-500/20 text-emerald-400" },
-    { key: "Scraping Tools", label: "Scraping Tools", badgeClass: "bg-amber-500/20 text-amber-400" },
-    { key: "Operations", label: "Operations Automations", badgeClass: "bg-rose-500/20 text-rose-400" },
-] as const;
 
 type TabId = 'automations' | 'case-studies' | 'sector-thesis';
 
@@ -50,6 +43,21 @@ const sectorThesisData: DocumentData[] = [
         companyLogoUrl: "/Emergent-Logo-PNG-SVG-Vector-01.png",
         companyName: "Emergent AI",
         logoBgColor: "#f1f5f9",
+        solutionLabel: "The Thesis:"
+    },
+    {
+        id: "st-2",
+        title: "India SaaS 3.0: The Rising CAC Crisis & The Path Forward",
+        problemStatement: "Customer Acquisition Costs (CAC) in Indian SaaS have surged 222% since 2019, while payback periods have stretched to 14–18 months. Horizontal SaaS startups are burning capital on inefficient GTM motions, compressing margins and causing a 30% YoY spike in startup shutdowns.",
+        proposedSolution: "The CAC crisis isn't a death knell—it's a filter. I analyzed how the next generation of winners will abandon horizontal playbooks. The path to profitability relies on three distinct pivots: deep Vertical-First dominance, Product-Led Growth (PLG) for SMBs, and outcome-based Service-as-Software models.",
+        tags: ["GTM STRATEGY", "VERTICAL SAAS", "UNIT ECONOMICS"],
+        pdfLink: "https://drive.google.com/file/d/1fkhKKpK6c0Kz3wE4jJUhSH6k6RnGV2rR/view?usp=sharing",
+        pptLink: "https://drive.google.com/file/d/1ISJxfOnoLj5tsSZ8sZe3jIlHwJvvwUNr/view?usp=sharing",
+        gradientClass: "bg-gradient-to-br from-violet-500/20 to-fuchsia-500/10", // Using same gradient for consistency unless specified
+        companyLogoUrl: "/ChatGPT Image Feb 25, 2026, 01_48_47 AM (1).png",
+        companyName: "India SaaS 3.0", // Inferring from context
+        logoBgColor: "#ffffff",
+        imageClassName: "scale-150",
         solutionLabel: "The Thesis:"
     }
 ];

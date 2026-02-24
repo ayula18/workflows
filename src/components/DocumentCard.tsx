@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { FileText, ExternalLink, Presentation, Briefcase } from "lucide-react";
-
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import TagPill from "@/components/ui/TagPill";
 
 export interface DocumentData {
     id: string;
@@ -10,11 +10,13 @@ export interface DocumentData {
     proposedSolution: string;
     tags: string[];
     pdfLink: string;
+    pptLink?: string;
     gradientClass?: string;
     companyLogoUrl?: string;
     companyName?: string;
     logoBgColor?: string;
     solutionLabel?: string;
+    imageClassName?: string;
 }
 
 interface DocumentCardProps {
@@ -30,7 +32,7 @@ export default function DocumentCard({ document }: DocumentCardProps) {
 
                 {/* Left Side: Visuals */}
                 <div
-                    className="w-full md:w-80 h-40 md:h-full min-h-[160px] relative z-10 flex-shrink-0 flex items-center justify-center p-6 sm:p-8 border-b md:border-b-0 md:border-r border-white/5"
+                    className="w-full md:w-80 h-40 md:h-full min-h-[160px] relative z-10 flex-shrink-0 flex items-center justify-center p-6 sm:p-8 border-b md:border-b-0 md:border-r border-white/5 overflow-hidden"
                     style={{ backgroundColor: document.logoBgColor || '#0f172a' }}
                 >
                     {/* Decorative background elements inside the thumbnail */}
@@ -39,12 +41,12 @@ export default function DocumentCard({ document }: DocumentCardProps) {
 
                     {/* Company Logo Box */}
                     {document.companyLogoUrl ? (
-                        <div className="relative w-full h-full max-w-[200px] max-h-[120px]">
+                        <div className="relative w-full h-full max-w-[240px] max-h-[140px]">
                             <Image
                                 src={document.companyLogoUrl}
                                 alt={document.companyName || "Company Logo"}
                                 fill
-                                className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                className={`object-contain opacity-90 group-hover:opacity-100 transition-opacity ${document.imageClassName || ''}`}
                             />
                         </div>
                     ) : (
@@ -63,9 +65,7 @@ export default function DocumentCard({ document }: DocumentCardProps) {
                         {/* Tags */}
                         <div className="flex gap-2 flex-wrap mb-3">
                             {document.tags.map((tag, i) => (
-                                <span key={i} className="font-mono text-[10px] uppercase tracking-wider font-medium opacity-60 border border-white/10 bg-white/5 px-2.5 py-1 rounded-sm">
-                                    {tag}
-                                </span>
+                                <TagPill key={i} tag={tag} />
                             ))}
                         </div>
 
@@ -87,8 +87,8 @@ export default function DocumentCard({ document }: DocumentCardProps) {
                         </div>
                     </div>
 
-                    {/* Action Button */}
-                    <div className="mt-4 pt-2">
+                    {/* Action Buttons */}
+                    <div className="mt-4 pt-2 flex flex-wrap gap-3">
                         <Link
                             href={document.pdfLink}
                             target="_blank"
@@ -98,6 +98,18 @@ export default function DocumentCard({ document }: DocumentCardProps) {
                             <span>View Deck (PDF)</span>
                             <ExternalLink size={14} className="opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                         </Link>
+
+                        {document.pptLink && (
+                            <Link
+                                href={document.pptLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-sm font-medium transition-all group/btn"
+                            >
+                                <span>View Deck (PPT)</span>
+                                <ExternalLink size={14} className="opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>

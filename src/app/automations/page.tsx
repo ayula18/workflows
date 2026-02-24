@@ -1,4 +1,4 @@
-import { automations } from "@/lib/data";
+import { automations, categories } from "@/lib/data";
 import AutomationCard from "@/components/AutomationCard";
 import SectionWrapper from "@/components/SectionWrapper";
 
@@ -7,13 +7,6 @@ export const metadata = {
     description: "Explore our library of high-impact GTM and Sales automations.",
 };
 
-const categories = [
-    { key: "Marketing & GTM", label: "Marketing & GTM Automations", badgeClass: "bg-gradient-to-r from-[var(--accent)]/20 to-[var(--accent-secondary)]/20 border border-[var(--accent)]/30 text-white" },
-    { key: "SaaS & Lead Gen", label: "SaaS & Lead Gen Automations", badgeClass: "bg-purple-500/20 text-purple-400" },
-    { key: "Fintech", label: "Fintech Automations", badgeClass: "bg-emerald-500/20 text-emerald-400" },
-    { key: "Scraping Tools", label: "Scraping Tools", badgeClass: "bg-amber-500/20 text-amber-400" },
-    { key: "Operations", label: "Operations Automations", badgeClass: "bg-rose-500/20 text-rose-400" },
-] as const;
 
 export default function AutomationsPage() {
     const allAutomations = Object.values(automations);

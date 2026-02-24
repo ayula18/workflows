@@ -46,29 +46,6 @@ export default function AnimatedText() {
                     {word}
                 </h2>
             ))}
-
-            <style jsx>{`
-                .gsap-container {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr;
-                    min-height: 50px;
-                    align-items: center;
-                    overflow: hidden;
-                }
-                .gsap-word {
-                    grid-row: 1;
-                    grid-column: 1;
-                    color: hsl(0 0% 98%);
-                    position: relative;
-                    text-align: right;
-                    font-size: clamp(1.5rem, 3vw, 2.5rem);
-                    font-weight: 800;
-                    margin: 0;
-                    line-height: 1.2;
-                    letter-spacing: -0.02em;
-                }
-            `}</style>
         </div>
     );
 }

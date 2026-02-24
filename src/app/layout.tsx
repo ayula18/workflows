@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import ChatWidget from "@/components/ChatWidget";
+import ChatWidgetLoader from "@/components/ChatWidgetLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <ChatWidget />
+        <ChatWidgetLoader />
       </body>
     </html>
   );

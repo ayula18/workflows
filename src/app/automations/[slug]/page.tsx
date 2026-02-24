@@ -11,6 +11,8 @@ import CallToAction from "@/components/CallToAction";
 import WorkflowArchitecture from "@/components/WorkflowArchitecture";
 import GeneratedAssets from "@/components/GeneratedAssets";
 import PreviewPanel from "@/components/PreviewPanel";
+import LoomEmbed from "@/components/ui/LoomEmbed";
+import TagPill from "@/components/ui/TagPill";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -60,9 +62,7 @@ export default async function AutomationPage({ params }: PageProps) {
 
                                 <div className="mb-6 flex gap-2">
                                     {automation.tags.map((tag, i) => (
-                                        <span key={i} className="font-mono text-[10px] font-medium px-2.5 py-1 rounded-full bg-white/5 border border-white/10 uppercase tracking-wider opacity-70">
-                                            {tag}
-                                        </span>
+                                        <TagPill key={i} tag={tag} className="rounded-full opacity-70" />
                                     ))}
                                 </div>
 
@@ -138,26 +138,7 @@ export default async function AutomationPage({ params }: PageProps) {
                         {/* Right Column (Sticky Container) */}
                         <div className="lg:sticky lg:top-36 lg:h-fit lg:pt-8">
                             {automation.loomVideoUrl ? (
-                                <>
-                                    <h3 className="text-sm font-bold uppercase tracking-wider opacity-50 mb-3">Quick Video Demo</h3>
-                                    <div className="glass-panel rounded-2xl p-2 relative overflow-hidden border border-white/10 shadow-2xl">
-                                        <div style={{ position: "relative", paddingBottom: "62.5%", height: 0 }}>
-                                            <iframe
-                                                src={automation.loomVideoUrl}
-                                                frameBorder="0"
-                                                allowFullScreen
-                                                style={{
-                                                    position: "absolute",
-                                                    top: 0,
-                                                    left: 0,
-                                                    width: "100%",
-                                                    height: "100%",
-                                                    borderRadius: "12px",
-                                                }}
-                                            />
-                                        </div>
-                                    </div>
-                                </>
+                                <LoomEmbed src={automation.loomVideoUrl} title="Quick Video Demo" />
                             ) : automation.previewPanel ? (
                                 <PreviewPanel data={automation.previewPanel} />
                             ) : null}
@@ -177,9 +158,7 @@ export default async function AutomationPage({ params }: PageProps) {
 
                         <div className="mb-6 flex gap-2">
                             {automation.tags.map((tag, i) => (
-                                <span key={i} className="font-mono text-[10px] font-medium px-2.5 py-1 rounded-full bg-white/5 border border-white/10 uppercase tracking-wider opacity-70">
-                                    {tag}
-                                </span>
+                                <TagPill key={i} tag={tag} className="rounded-full opacity-70" />
                             ))}
                         </div>
 
