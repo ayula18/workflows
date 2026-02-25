@@ -9,7 +9,7 @@ export default function TypewriterHeading() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] shrink-0 min-w-[200px] sm:min-w-[280px] md:min-w-[360px] text-left">
                 <Typewriter
                     options={{
-                        strings: ['Ayush Lahoti.', 'your next hire.', 'a Business Generalist.'],
+                        strings: ['Ayush Lahoti.', 'your next hire.', 'an AI Business Generalist.'],
                         autoStart: true,
                         loop: true,
                         deleteSpeed: 50,

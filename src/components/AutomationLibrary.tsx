@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { automations, categories } from "@/lib/data";
+import { automations, categories, caseStudiesData, sectorThesisData } from "@/lib/data";
 import AutomationCard from "@/components/AutomationCard";
-import DocumentCard, { type DocumentData } from "@/components/DocumentCard";
+import DocumentCard from "@/components/DocumentCard";
 import SectionWrapper from "@/components/SectionWrapper";
-
 
 type TabId = 'automations' | 'case-studies' | 'sector-thesis';
 
@@ -14,52 +13,6 @@ const tabs: { id: TabId; label: string }[] = [
     { id: 'automations', label: 'Automations' },
     { id: 'case-studies', label: 'Case Studies' },
     { id: 'sector-thesis', label: 'Sector Thesis' },
-];
-
-const caseStudiesData: DocumentData[] = [
-    {
-        id: "cs-1",
-        title: "Mosaic's AI Creative Engine: Scaling ROAS & Market Share",
-        problemStatement: "Manual, intuition-driven workflows severely bottlenecked ad creation, taking over 48 hours to research, script, and source influencers per campaign.",
-        proposedSolution: "Designed an AI-driven creative automation framework. The system automates influencer scraping, scoring, and script generation—reducing script TAT to 30 mins and increasing creative testing velocity by 4X.",
-        tags: ["PERFORMANCE MARKETING", "AI AUTOMATION", "GTM STRATEGY"],
-        pdfLink: "https://drive.google.com/file/d/14v2RF4nt5tebKrqO8xH5dQzUceiSfgGU/view?usp=sharing",
-        gradientClass: "bg-gradient-to-br from-green-500/20 to-emerald-500/10",
-        companyLogoUrl: "/mosaic-logo.png",
-        companyName: "Mosaic",
-        logoBgColor: "#0B1A14"
-    }
-];
-
-const sectorThesisData: DocumentData[] = [
-    {
-        id: "st-1",
-        title: "Enterprise AI in India: Solving the Sovereign Deployment Gap",
-        problemStatement: "Despite 47% of Indian enterprises having Generative AI use cases in production, they face a critical deployment bottleneck. Traditional System Integrators take 30-45 days to deploy, global models fail at code-mixed Indic languages, and sovereign compute premiums squeeze margins.",
-        proposedSolution: "A fundamental value chain shift from labor arbitrage to cognitive arbitrage. I analyzed how players like Sarvam AI (Sovereign Models), Emergent (Agentic Platforms), and Blue Machines AI are bypassing legacy integrators to achieve 5-7 day deployment times and outcome-based pricing.",
-        tags: ["MARKET RESEARCH", "ENTERPRISE SaaS", "INVESTMENT MEMO"],
-        pdfLink: "https://drive.google.com/file/d/1JDQzdv8dgN8wjp5YpfI42qbhVllDEdzG/view?usp=sharing",
-        gradientClass: "bg-gradient-to-br from-violet-500/20 to-fuchsia-500/10",
-        companyLogoUrl: "/Emergent-Logo-PNG-SVG-Vector-01.png",
-        companyName: "Emergent AI",
-        logoBgColor: "#f1f5f9",
-        solutionLabel: "The Thesis:"
-    },
-    {
-        id: "st-2",
-        title: "India SaaS 3.0: The Rising CAC Crisis & The Path Forward",
-        problemStatement: "Customer Acquisition Costs (CAC) in Indian SaaS have surged 222% since 2019, while payback periods have stretched to 14–18 months. Horizontal SaaS startups are burning capital on inefficient GTM motions, compressing margins and causing a 30% YoY spike in startup shutdowns.",
-        proposedSolution: "The CAC crisis isn't a death knell—it's a filter. I analyzed how the next generation of winners will abandon horizontal playbooks. The path to profitability relies on three distinct pivots: deep Vertical-First dominance, Product-Led Growth (PLG) for SMBs, and outcome-based Service-as-Software models.",
-        tags: ["GTM STRATEGY", "VERTICAL SAAS", "UNIT ECONOMICS"],
-        pdfLink: "https://drive.google.com/file/d/1fkhKKpK6c0Kz3wE4jJUhSH6k6RnGV2rR/view?usp=sharing",
-        pptLink: "https://drive.google.com/file/d/1ISJxfOnoLj5tsSZ8sZe3jIlHwJvvwUNr/view?usp=sharing",
-        gradientClass: "bg-gradient-to-br from-violet-500/20 to-fuchsia-500/10", // Using same gradient for consistency unless specified
-        companyLogoUrl: "/ChatGPT Image Feb 25, 2026, 01_48_47 AM (1).png",
-        companyName: "India SaaS 3.0", // Inferring from context
-        logoBgColor: "#ffffff",
-        imageClassName: "scale-150",
-        solutionLabel: "The Thesis:"
-    }
 ];
 
 export default function AutomationLibrary() {
