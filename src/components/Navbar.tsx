@@ -53,7 +53,7 @@ export default function Navbar() {
                 {/* Right Side */}
                 <div className="flex-1 flex justify-end items-center gap-3 w-full sm:w-auto">
                     <a
-                        href="/resume.pdf"
+                        href="https://drive.google.com/file/d/1ug60B8tidw9ujYirz46xv_O8VSuNutpH/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-white/10 hover:bg-white/20 transition-colors"
