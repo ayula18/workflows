@@ -66,10 +66,10 @@ export default async function AutomationPage({ params }: PageProps) {
                                     ))}
                                 </div>
 
-                                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
                                     {automation.title}
                                 </h1>
-                                <p className="text-xl md:text-1xl opacity-60 max-w-3xl">
+                                <p className="text-xl md:text-1xl text-slate-500 dark:text-gray-400 opacity-80 dark:opacity-60 max-w-3xl">
                                     {automation.description}
                                 </p>
                             </div>
@@ -77,10 +77,10 @@ export default async function AutomationPage({ params }: PageProps) {
                             {/* Impact Summary Section Content */}
                             {automation.metricsPills ? (
                                 <div className="mt-4 pb-4">
-                                    <h3 className="text-sm font-bold uppercase tracking-wider opacity-50 mb-4">Impact</h3>
+                                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 opacity-70 dark:opacity-50 mb-4">Impact</h3>
                                     <div className="flex flex-wrap gap-3">
                                         {automation.metricsPills.map((pill, idx) => (
-                                            <div key={idx} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm font-medium">
+                                            <div key={idx} className="px-4 py-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 backdrop-blur-sm text-sm font-medium">
                                                 <span className="text-[var(--accent)] font-bold mr-2">{pill.split(' ')[0]}</span>
                                                 <span className="opacity-90">{pill.split(' ').slice(1).join(' ')}</span>
                                             </div>
@@ -100,18 +100,18 @@ export default async function AutomationPage({ params }: PageProps) {
 
                             {/* Conditionally render Problem & Built For immediately below Hero in the Left Column */}
                             {automation.problemPoints && automation.builtFor ? (
-                                <div className="mt-8 pt-8 border-t border-white/5 space-y-16">
+                                <div className="mt-8 pt-8 border-t border-slate-200 dark:border-white/5 space-y-16">
                                     {/* The Problem */}
                                     <div className="space-y-6">
-                                        <h2 className="text-3xl font-bold">{automation.problem.title}</h2>
-                                        <p className="text-lg opacity-70 leading-relaxed font-light">
+                                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{automation.problem.title}</h2>
+                                        <p className="text-lg text-slate-600 dark:text-gray-300 opacity-80 dark:opacity-70 leading-relaxed font-light">
                                             {automation.problem.description}
                                         </p>
                                         <ul className="space-y-4 mt-6">
                                             {automation.problemPoints.map((point, i) => (
                                                 <li key={i} className="flex items-start gap-4">
                                                     <XCircle className="w-5 h-5 text-red-500/80 mt-0.5 shrink-0" />
-                                                    <span className="opacity-80 leading-snug">{point}</span>
+                                                    <span className="text-slate-600 dark:text-gray-300 opacity-80 leading-snug">{point}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -119,12 +119,12 @@ export default async function AutomationPage({ params }: PageProps) {
 
                                     {/* Built For */}
                                     <div className="space-y-6">
-                                        <h2 className="text-3xl font-bold">Built For</h2>
+                                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Built For</h2>
                                         <div className="flex flex-col gap-6 pt-2">
                                             {automation.builtFor.map((persona, i) => (
-                                                <div key={i} className="flex flex-col gap-1.5 border-l-2 border-white/10 pl-5">
+                                                <div key={i} className="flex flex-col gap-1.5 border-l-2 border-slate-300 dark:border-white/10 pl-5">
                                                     <h3 className="text-xl font-semibold inline-block text-gradient pb-1">{persona.persona}</h3>
-                                                    <p className="opacity-70 leading-relaxed text-sm max-w-lg">
+                                                    <p className="text-slate-500 dark:text-gray-400 opacity-80 dark:opacity-70 leading-relaxed text-sm max-w-lg">
                                                         {persona.description}
                                                     </p>
                                                 </div>
@@ -162,10 +162,10 @@ export default async function AutomationPage({ params }: PageProps) {
                             ))}
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
                             {automation.title}
                         </h1>
-                        <p className="text-xl md:text-2xl opacity-60 max-w-3xl">
+                        <p className="text-xl md:text-2xl text-slate-500 dark:text-gray-400 opacity-80 dark:opacity-60 max-w-3xl">
                             {automation.description}
                         </p>
                     </SectionWrapper>

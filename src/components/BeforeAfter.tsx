@@ -20,15 +20,15 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
                 </defs>
             </svg>
 
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-slate-900 dark:text-white">
                 Before vs <span className="text-gradient">After</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {/* Before Card */}
-                <div className="glass-panel p-8 rounded-2xl border-red-500/20 relative overflow-hidden">
+                <div className="p-8 rounded-2xl border border-red-200 dark:border-red-500/20 relative overflow-hidden bg-white dark:bg-[#0B0F19]">
                     <div className="flex justify-between items-center mb-6">
-                        <h3 className="text-2xl font-bold text-white">The Old Way</h3>
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">The Old Way</h3>
                         <div className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 tracking-wider whitespace-nowrap">
                             MANUAL
                         </div>
@@ -36,7 +36,7 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
 
                     <ul className="space-y-4">
                         {before.map((item, i) => (
-                            <li key={i} className="flex items-start gap-3 opacity-80">
+                            <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-gray-300 opacity-80">
                                 <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                                 <span>{item}</span>
                             </li>
@@ -45,9 +45,9 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
                 </div>
 
                 {/* After Card */}
-                <div className="glass-panel p-8 rounded-2xl border-emerald-500/20 relative overflow-hidden bg-gradient-to-br from-emerald-500/5 to-emerald-400/5">
+                <div className="p-8 rounded-2xl border border-emerald-200 dark:border-emerald-500/20 relative overflow-hidden bg-emerald-50 dark:bg-[#0B0F19] bg-gradient-to-br from-emerald-50 to-emerald-50/50 dark:from-emerald-500/5 dark:to-emerald-400/5">
                     <div className="flex justify-between items-center mb-6">
-                        <h3 className="text-2xl font-bold text-white">The Automated Way</h3>
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">The Automated Way</h3>
                         <div className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 tracking-wider whitespace-nowrap">
                             AUTOMATED
                         </div>
@@ -57,7 +57,7 @@ export default function BeforeAfter({ before, after }: BeforeAfterProps) {
                         {after.map((item, i) => (
                             <li key={i} className="flex items-start gap-3">
                                 <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-emerald-500" />
-                                <span className="text-[var(--foreground)]">{item}</span>
+                                <span className="text-slate-700 dark:text-[var(--foreground)]">{item}</span>
                             </li>
                         ))}
                     </ul>

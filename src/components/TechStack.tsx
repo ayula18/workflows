@@ -24,10 +24,10 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
         <SectionWrapper id="stack">
             <div className="grid lg:grid-cols-5 gap-12 items-center">
                 <div className="lg:col-span-2">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
                         Under the <span className="text-gradient">hood</span>
                     </h2>
-                    <p className="text-lg opacity-70 mb-8">
+                    <p className="text-lg text-slate-500 dark:text-gray-400 opacity-80 dark:opacity-70 mb-8">
                         Built with modern, scalable low-code tools and enterprise-grade APIs to ensure reliability and speed.
                     </p>
 
@@ -35,7 +35,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                         {stack.map((tech, i) => (
                             <span
                                 key={i}
-                                className="font-mono px-4 py-2 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[var(--accent)]/50 transition-colors cursor-default"
+                                className="font-mono px-4 py-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 hover:border-[var(--accent)]/50 transition-colors cursor-default"
                             >
                                 {tech}
                             </span>
@@ -44,7 +44,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                 </div>
 
                 <div className="lg:col-span-3">
-                    <div className="relative aspect-video rounded-2xl glass-panel p-8 flex items-center justify-center overflow-hidden">
+                    <div className="relative aspect-video rounded-2xl p-8 flex items-center justify-center overflow-hidden bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-[var(--card-border)]">
                         {/* Abstract Architecture Diagram */}
                         <div className="absolute inset-0 bg-grid-white/[0.02]" />
 
@@ -54,7 +54,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.1 }}
-                                className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
+                                className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-slate-200 dark:border-[var(--card-border)] bg-slate-50 dark:bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2 text-slate-700 dark:text-white"
                             >
                                 {labels.source}
                             </motion.div>
@@ -85,7 +85,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-[var(--card-border)] bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2"
+                                className="font-mono shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl border border-slate-200 dark:border-[var(--card-border)] bg-slate-50 dark:bg-[var(--background)] flex items-center justify-center text-xs font-bold text-center p-2 text-slate-700 dark:text-white"
                             >
                                 {labels.output}
                             </motion.div>

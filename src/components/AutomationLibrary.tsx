@@ -22,24 +22,24 @@ export default function AutomationLibrary() {
     return (
         <SectionWrapper id="library" className="py-20">
             <div className="text-center mb-12">
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
                     Proof of Work
                 </h2>
-                <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                <p className="text-xl text-slate-500 dark:text-gray-400 max-w-2xl mx-auto">
                     A collection of business bottlenecks I&apos;ve solved. Explore my execution across operational automations, strategic case studies, and market research.
                 </p>
             </div>
 
             {/* Tab Navigation */}
             <div className="flex justify-center mb-16 px-4">
-                <div className="flex bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-full overflow-x-auto no-scrollbar">
+                <div className="flex bg-slate-100 dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 p-1.5 rounded-full overflow-x-auto no-scrollbar">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${activeTab === tab.id
                                 ? "text-slate-900"
-                                : "text-gray-400 hover:text-gray-200 hover:bg-white/5"
+                                : "text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200 hover:bg-slate-200/50 dark:hover:bg-white/5"
                                 }`}
                         >
                             {activeTab === tab.id && (
@@ -72,7 +72,7 @@ export default function AutomationLibrary() {
                                 return (
                                     <div key={cat.key} className={idx < categories.length - 1 ? "mb-20" : ""}>
                                         <div className="flex items-center gap-3 mb-8">
-                                            <h3 className="text-2xl font-bold">{cat.label}</h3>
+                                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{cat.label}</h3>
                                             <span className={`px-2 py-0.5 rounded text-xs font-bold ${cat.badgeClass}`}>
                                                 {items.length}
                                             </span>

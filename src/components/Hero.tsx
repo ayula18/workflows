@@ -44,7 +44,7 @@ export default function Hero() {
 
                     <TypewriterHeading />
 
-                    <p className="text-lg md:text-lg text-white/50 max-w-2xl mx-auto mb-5 leading-relaxed">
+                    <p className="text-lg md:text-lg text-slate-500 dark:text-white/50 max-w-2xl mx-auto mb-5 leading-relaxed">
                         Business Generalist with a track record of taking 0&rarr;1 products to market and streamlining sales engines. I combine strategic problem-solving with advanced AI workflow design to help founders scale operations and drive revenue.
                     </p>
 
@@ -54,7 +54,7 @@ export default function Hero() {
                                 e.preventDefault();
                                 window.dispatchEvent(new CustomEvent('open-chat-widget'));
                             }}
-                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white font-semibold text-sm hover:border-white/20 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 backdrop-blur-sm text-slate-800 dark:text-white font-semibold text-sm hover:border-slate-300 dark:hover:border-white/20 transition-all shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                         >
                             <Bot size={18} className="mr-2 opacity-80" />
                             Talk to my AI

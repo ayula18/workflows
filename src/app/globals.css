@@ -1,8 +1,19 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #050816;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --accent: #0d9488;
+  --accent-secondary: #7c3aed;
+  --card-bg: rgba(0, 0, 0, 0.02);
+  --card-border: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --background: #030712;
   --foreground: #ededed;
   --accent: #A0E8E6;
   --accent-secondary: #D1A7FF;
@@ -30,7 +41,7 @@ body {
 
 @layer utilities {
   .glass-panel {
-    @apply bg-[var(--card-bg)] backdrop-blur-md border border-[var(--card-border)];
+    @apply bg-white/60 backdrop-blur-md border border-slate-200/60 dark:bg-[var(--card-bg)] dark:backdrop-blur-md dark:border-[var(--card-border)];
   }
 
   .text-gradient {
@@ -60,7 +71,7 @@ body {
   .gsap-word {
     grid-row: 1;
     grid-column: 1;
-    color: hsl(0 0% 98%);
+    color: hsl(215 25% 20%);
     position: relative;
     text-align: right;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -69,4 +80,8 @@ body {
     line-height: 1.2;
     letter-spacing: -0.02em;
   }
+}
+
+.dark .gsap-word {
+  color: hsl(0 0% 98%);
 }

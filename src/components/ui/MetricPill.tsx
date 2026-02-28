@@ -21,7 +21,7 @@ export default function MetricPill({ value, label, index, size = "sm" }: MetricP
 
     return (
         <div className={`flex items-center gap-3 ${isLarge ? "" : "glass-panel rounded-xl px-5 py-3"}`}>
-            <div className={`${isLarge ? "p-3" : "p-2"} rounded-lg border border-white/10 ${colorClass}`}>
+            <div className={`${isLarge ? "p-3" : "p-2"} rounded-lg border border-slate-200 dark:border-white/10 ${colorClass}`}>
                 <Icon className={isLarge ? "w-6 h-6" : "w-4 h-4"} />
             </div>
             <div>

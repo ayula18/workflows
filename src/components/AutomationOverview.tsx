@@ -21,7 +21,7 @@ interface AutomationOverviewProps {
 
 function MetricsCard({ metrics }: { metrics: Metric[] }) {
     return (
-        <div className="glass-panel rounded-2xl p-8 relative overflow-hidden group">
+        <div className="rounded-2xl p-8 relative overflow-hidden group bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-[var(--card-border)]">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent-secondary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10 grid gap-8">
                 {metrics.map((metric, i) => (
@@ -48,8 +48,8 @@ function OverviewTextContent({
     solutionDescription,
 }: Pick<AutomationOverviewProps, "problemTitle" | "problemDescription" | "solutionDescription">) {
     return (
-        <div className="space-y-4 text-lg text-[var(--foreground)] opacity-80">
-            {problemTitle && <h3 className="text-xl font-bold text-white">{problemTitle}</h3>}
+        <div className="space-y-4 text-lg text-slate-600 dark:text-[var(--foreground)] opacity-80">
+            {problemTitle && <h3 className="text-xl font-bold text-slate-900 dark:text-white">{problemTitle}</h3>}
             {problemDescription && <p>{problemDescription}</p>}
             {solutionDescription && <p>{solutionDescription}</p>}
         </div>
@@ -123,8 +123,8 @@ export default function AutomationOverview({
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start">
-                <div className="space-y-6 text-lg text-[var(--foreground)] opacity-80">
-                    {problemTitle && <h3 className="text-xl font-bold text-white">{problemTitle}</h3>}
+                <div className="space-y-6 text-lg text-slate-600 dark:text-[var(--foreground)] opacity-80">
+                    {problemTitle && <h3 className="text-xl font-bold text-slate-900 dark:text-white">{problemTitle}</h3>}
                     {problemDescription && <p>{problemDescription}</p>}
                     {solutionDescription && <p>{solutionDescription}</p>}
                 </div>

@@ -15,10 +15,10 @@ export default function AutomationsPage() {
         <main className="min-h-screen pt-24 pb-20">
             <SectionWrapper>
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-900 dark:text-white">
                         Automation <span className="text-gradient">Library</span>
                     </h1>
-                    <p className="text-xl opacity-60 max-w-2xl mx-auto">
+                    <p className="text-xl text-slate-500 dark:text-gray-400 opacity-80 dark:opacity-60 max-w-2xl mx-auto">
                         Browse our collection of production-ready workflows designed to scale your revenue engine.
                     </p>
                 </div>
@@ -29,7 +29,7 @@ export default function AutomationsPage() {
                     return (
                         <div key={cat.key} className={idx < categories.length - 1 ? "mb-20" : ""}>
                             <div className="flex items-center gap-3 mb-8">
-                                <h2 className="text-2xl font-bold">{cat.label}</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{cat.label}</h2>
                                 <span className={`px-2 py-0.5 rounded text-xs font-bold ${cat.badgeClass}`}>
                                     {items.length}
                                 </span>

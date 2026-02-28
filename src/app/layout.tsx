@@ -3,6 +3,7 @@ import { Inter, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ChatWidgetLoader from "@/components/ChatWidgetLoader";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,13 +34,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${dmMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <ChatWidgetLoader />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <ChatWidgetLoader />
+        </ThemeProvider>
       </body>
     </html>
   );
