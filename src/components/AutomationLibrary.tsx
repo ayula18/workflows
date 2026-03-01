@@ -33,7 +33,31 @@ export default function AutomationLibrary() {
 
             {/* Tab Navigation */}
             <div className="flex justify-center mb-16 px-4">
-                <div className="flex bg-slate-100 dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 p-1.5 rounded-full overflow-x-auto no-scrollbar">
+                {/* Mobile: vertical stack */}
+                <div className="flex flex-col w-full max-w-sm gap-2 md:hidden">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`relative px-5 py-3 rounded-2xl text-sm font-medium transition-all border ${activeTab === tab.id
+                                ? "text-white dark:text-slate-900 border-transparent shadow-lg"
+                                : "text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200 border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5"
+                                }`}
+                        >
+                            {activeTab === tab.id && (
+                                <motion.div
+                                    layoutId="active-tab-mobile"
+                                    className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] rounded-2xl"
+                                    transition={{ type: "spring", duration: 0.6, bounce: 0.2 }}
+                                />
+                            )}
+                            <span className="relative z-10">{tab.label}</span>
+                        </button>
+                    ))}
+                </div>
+
+                {/* Desktop: horizontal pills */}
+                <div className="hidden md:flex bg-slate-100 dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 p-1.5 rounded-full">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}
