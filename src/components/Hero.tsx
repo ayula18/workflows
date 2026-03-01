@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowDown, Bot } from "lucide-react";
@@ -10,15 +11,25 @@ const Prism = dynamic(() => import("@/components/animations/Prism"), {
 });
 
 export default function Hero() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mq = window.matchMedia("(max-width: 767px)");
+        setIsMobile(mq.matches);
+        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        mq.addEventListener("change", handler);
+        return () => mq.removeEventListener("change", handler);
+    }, []);
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
             {/* WebGL Prism Background */}
             <div className="absolute inset-0 z-0">
                 <Prism
                     animationType="hover"
-                    hoverStrength={1.5}
-                    scale={3.6}
-                    glow={1}
+                    hoverStrength={isMobile ? 0.8 : 1.5}
+                    scale={isMobile ? 2.0 : 3.6}
+                    glow={isMobile ? 1.5 : 1}
                     bloom={1}
                     noise={0.3}
                     hueShift={0}
