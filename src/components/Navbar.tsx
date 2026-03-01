@@ -1,16 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
     const { scrollY } = useScroll();
 
-    // Map scroll position from 0 to 120px.
+    // Smooth out the scroll value so the width changes fluidly
+    // instead of jumping abruptly with wheel steps
+    const smoothY = useSpring(scrollY, {
+        stiffness: 50,  // Lower stiffness makes it slower
+        damping: 20,    // Adjusted damping for smooth easing
+        restDelta: 0.001
+    });
+
+    // Map smooth scroll position from 0 to 120px.
     // 0px = 1280px wide
     // 120px (and beyond) = 1024px wide
-    const maxWidth = useTransform(scrollY, [0, 120], ["1280px", "1024px"]);
+    const maxWidth = useTransform(smoothY, [0, 120], ["1280px", "1024px"]);
 
     return (
         <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">

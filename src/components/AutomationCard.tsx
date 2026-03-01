@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, TrendingUp, Briefcase, CircleDollarSign, Search, Package, type LucideIcon } from "lucide-react";
 import { Automation } from "@/lib/data";

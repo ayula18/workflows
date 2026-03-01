@@ -18,6 +18,10 @@ interface PageProps {
     params: Promise<{ slug: string }>;
 }
 
+export async function generateStaticParams() {
+    return Object.keys(automations).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params;
     const automation = automations[slug];
