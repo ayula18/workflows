@@ -38,7 +38,7 @@ export default function AutomationLibrary() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${activeTab === tab.id
-                                ? "text-slate-900"
+                                ? "text-white"
                                 : "text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200 hover:bg-slate-200/50 dark:hover:bg-white/5"
                                 }`}
                         >

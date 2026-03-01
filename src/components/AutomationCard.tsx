@@ -55,7 +55,7 @@ export default function AutomationCard({ automation }: AutomationCardProps) {
                             ))}
                         </div>
 
-                        <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-[var(--accent)] group-hover:to-[var(--accent-secondary)] group-hover:text-black transition-all">
+                        <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-[var(--accent)] group-hover:to-[var(--accent-secondary)] group-hover:text-white transition-all">
                             <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                         </div>
                     </div>
