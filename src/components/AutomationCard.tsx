@@ -21,11 +21,11 @@ export default function AutomationCard({ automation }: AutomationCardProps) {
 
     return (
         <Link href={`/automations/${automation.slug}`} className="group block h-full">
-            <div className="p-6 rounded-2xl h-full border border-slate-200 hover:border-[var(--accent)] dark:border-white/10 dark:hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden bg-white dark:bg-[#0B0F19]">
+            <div className="p-6 rounded-2xl h-full min-h-[285px] border border-slate-200 hover:border-[var(--accent)] dark:border-white/10 dark:hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden bg-white dark:bg-[#0B0F19] flex flex-col">
                 {/* Hover Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-[var(--accent-secondary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                <div className="relative z-10 flex flex-col h-full">
+                <div className="relative z-10 flex flex-col flex-1">
                     <div className="flex items-center justify-between gap-3 mb-4">
                         <div className="p-2.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-gradient">
                             <IconComponent size={20} strokeWidth={1.5} className="text-slate-400 dark:text-white mix-blend-overlay opacity-50 absolute" />
@@ -42,7 +42,7 @@ export default function AutomationCard({ automation }: AutomationCardProps) {
                         {automation.title}
                     </h3>
 
-                    <p className="text-sm text-slate-500 dark:text-gray-300 opacity-70 mb-6 line-clamp-2">
+                    <p className="text-sm text-slate-500 dark:text-gray-300 opacity-70 mb-6 line-clamp-4">
                         {automation.description}
                     </p>
 
