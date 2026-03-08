@@ -103,11 +103,19 @@ export function ScrollStack({
             if (useWindowScroll) {
                 const rect = el.getBoundingClientRect();
                 const windowH = window.innerHeight;
-                const totalTravel = el.scrollHeight - windowH;
-                // Start animation 200px before the container reaches the viewport top
-                const earlyStart = 200;
-                const scrolled = -rect.top + earlyStart;
-                const progress = Math.max(0, Math.min(1, scrolled / totalTravel));
+
+                // Distance from when element top hits viewport top to when element bottom hits viewport bottom
+                const maxTravel = el.scrollHeight - windowH;
+                if (maxTravel <= 0) {
+                    setScrollProgress(1);
+                    return;
+                }
+
+                // How far we have scrolled past the element's top edge
+                const scrolled = -rect.top;
+
+                // Allow progress to go from 0 (at top) to 1 (at bottom) cleanly
+                const progress = Math.max(0, Math.min(1, scrolled / maxTravel));
                 setScrollProgress(progress);
             } else {
                 const maxScroll = el.scrollHeight - el.clientHeight;
