@@ -1149,7 +1149,7 @@ export const categories = [
     { key: "Operations", label: "Operations Automations", badgeClass: "bg-rose-500/20 text-rose-400" },
 ] as const;
 
-import { DocumentData } from "@/components/DocumentCard";
+import { DocumentData } from "@/components/documents/DocumentCard";
 
 export const caseStudiesData: DocumentData[] = [
     {

@@ -151,7 +151,7 @@ export function ScrollStack({
                     overflow: useWindowScroll ? "visible" : "auto",
                 }}
             >
-                <div className="sticky top-[80px]" style={{ height: "calc(100vh - 80px)" }}>
+                <div className="sticky top-[80px]" style={{ height: "100vh" }}>
                     {items.map((child, i) =>
                         React.isValidElement(child)
                             ? React.cloneElement(child as React.ReactElement<ScrollStackItemProps>, {

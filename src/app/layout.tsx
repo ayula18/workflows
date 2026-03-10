@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, DM_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import ChatWidgetLoader from "@/components/ChatWidgetLoader";
-import ThemeProvider from "@/components/ThemeProvider";
+import Navbar from "@/components/navigation/Navbar";
+import ChatWidgetLoader from "@/components/chat/ChatWidgetLoader";
+import ThemeProvider from "@/components/theme/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",

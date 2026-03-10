@@ -19,12 +19,19 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Failed to communicate with AI' }, { status: response.status });
         }
 
+        const text = await response.text();
         const contentType = response.headers.get('content-type');
+
         if (contentType && contentType.includes('application/json')) {
-            const data = await response.json();
-            return NextResponse.json(data);
+            console.log("N8N Raw Text Received:", text); // Debugging line
+            try {
+                const data = JSON.parse(text);
+                return NextResponse.json(data);
+            } catch (e) {
+                console.error("JSON parse failed. Falling back. Text was:", text);
+                return NextResponse.json({ output: text || "Success" });
+            }
         } else {
-            const text = await response.text();
             return NextResponse.json({ output: text });
         }
     } catch (error) {
