@@ -35,7 +35,7 @@ export default function DesktopNav({ maxWidth }: DesktopNavProps) {
 
             <div className="flex-1 flex justify-end items-center gap-3">
                 <a
-                    href="https://drive.google.com/file/d/1ug60B8tidw9ujYirz46xv_O8VSuNutpH/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1Mp2f-hR_D3kPfGbHSwu57WdNzMPlD5GZ/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-semibold rounded-full bg-slate-100 text-slate-800 hover:bg-slate-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 transition-colors"

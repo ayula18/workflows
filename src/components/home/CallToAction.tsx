@@ -43,7 +43,7 @@ export default function CallToAction() {
                                 <Linkedin className="w-5 h-5" />
                             </a>
                             <a
-                                href="/resume.pdf"
+                                href="https://drive.google.com/file/d/1Mp2f-hR_D3kPfGbHSwu57WdNzMPlD5GZ/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:border-[var(--accent-secondary)] hover:text-[var(--accent-secondary)] hover:bg-[var(--accent-secondary)]/10 transition-all duration-300"

@@ -78,7 +78,7 @@ export default function MobileNavSheet({ isOpen, pathname, onClose }: MobileNavS
                         {/* Action buttons */}
                         <div className="flex flex-col gap-3 px-5 pt-5">
                             <a
-                                href="https://drive.google.com/file/d/1ug60B8tidw9ujYirz46xv_O8VSuNutpH/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1Mp2f-hR_D3kPfGbHSwu57WdNzMPlD5GZ/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={onClose}
