@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowDown, Bot } from "lucide-react";
@@ -21,6 +21,16 @@ export default function Hero() {
         return () => mq.removeEventListener("change", handler);
     }, []);
 
+    // Memoize the offset object to prevent Prism from tearing down its
+    // entire WebGL context on every parent re-render (the dependency array
+    // on the Prism useEffect includes offset.x and offset.y).
+    const prismOffset = useMemo(() => ({ x: 0, y: 0 }), []);
+
+    const openChat = useCallback((e: React.MouseEvent) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('open-chat-widget'));
+    }, []);
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
             {/* WebGL Prism Background */}
@@ -37,6 +47,7 @@ export default function Hero() {
                     timeScale={0.5}
                     transparent
                     suspendWhenOffscreen={true}
+                    offset={prismOffset}
                 />
                 {/* Dark overlay for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--background)]/60 via-transparent to-[var(--background)]" />
@@ -61,10 +72,7 @@ export default function Hero() {
 
                     <div className="flex mt-20 flex-col sm:flex-row gap-4 justify-center items-center">
                         <button
-                            onClick={(e) => {
-                                e.preventDefault();
-                                window.dispatchEvent(new CustomEvent('open-chat-widget'));
-                            }}
+                            onClick={openChat}
                             className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 backdrop-blur-sm text-slate-800 dark:text-white font-semibold text-sm hover:border-slate-300 dark:hover:border-white/20 transition-all shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                         >
                             <Bot size={18} className="mr-2 opacity-80" />

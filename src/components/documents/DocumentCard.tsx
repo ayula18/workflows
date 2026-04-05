@@ -26,7 +26,7 @@ interface DocumentCardProps {
 export default function DocumentCard({ document }: DocumentCardProps) {
     return (
         <div className="group block h-full">
-            <div className="rounded-2xl h-full border border-slate-200 dark:border-white/10 hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden flex flex-col sm:flex-row bg-white dark:bg-[#0B0F19]">
+            <div className="rounded-2xl h-full border border-slate-200 dark:border-white/10 hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden flex flex-col sm:flex-row bg-white dark:bg-[var(--card-bg-solid)]">
                 {/* Hover Glow Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-[var(--accent-secondary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0" />
 

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Bot, X, Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -16,7 +17,12 @@ interface ChatPanelProps {
     inputRef: RefObject<HTMLInputElement | null>;
 }
 
-export default function ChatPanel({
+/** Pure helper — defined outside the component to avoid re-creation */
+function formatTime(d: Date) {
+    return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
+export default memo(function ChatPanel({
     messages,
     isTyping,
     input,
@@ -26,8 +32,6 @@ export default function ChatPanel({
     messagesEndRef,
     inputRef
 }: ChatPanelProps) {
-    const formatTime = (d: Date) => d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-
     return (
         <motion.div
             key="chat-panel"
@@ -35,7 +39,7 @@ export default function ChatPanel({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.92 }}
             transition={{ type: "spring", stiffness: 300, damping: 28 }}
-            className="fixed bottom-6 right-6 z-[9999] flex flex-col overflow-hidden rounded-2xl shadow-2xl bg-white/95 dark:bg-[#080c1e]/95 backdrop-blur-xl border border-slate-200 dark:border-white/10"
+            className="fixed bottom-6 right-6 z-[9999] flex flex-col overflow-hidden rounded-2xl shadow-2xl bg-white/95 dark:bg-[var(--card-bg-solid)]/95 backdrop-blur-xl border border-slate-200 dark:border-white/10"
             style={{
                 width: "min(380px, calc(100vw - 2rem))",
                 height: "min(520px, calc(100vh - 6rem))",
@@ -126,4 +130,4 @@ export default function ChatPanel({
             </form>
         </motion.div>
     );
-}
+});

@@ -44,7 +44,7 @@ export default function TechStack({ stack, architectureLabels }: TechStackProps)
                 </div>
 
                 <div className="lg:col-span-3">
-                    <div className="relative aspect-video rounded-2xl p-8 flex items-center justify-center overflow-hidden bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-[var(--card-border)]">
+                    <div className="relative aspect-video rounded-2xl p-8 flex items-center justify-center overflow-hidden bg-white dark:bg-[var(--card-bg-solid)] border border-slate-200 dark:border-[var(--card-border)]">
                         {/* Abstract Architecture Diagram */}
                         <div className="absolute inset-0 bg-grid-white/[0.02]" />
 

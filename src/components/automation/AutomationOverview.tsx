@@ -21,7 +21,7 @@ interface AutomationOverviewProps {
 
 function MetricsCard({ metrics }: { metrics: Metric[] }) {
     return (
-        <div className="rounded-2xl p-8 relative overflow-hidden group bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-[var(--card-border)]">
+        <div className="rounded-2xl p-8 relative overflow-hidden group bg-white dark:bg-[var(--card-bg-solid)] border border-slate-200 dark:border-[var(--card-border)]">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent-secondary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10 grid gap-8">
                 {metrics.map((metric, i) => (

@@ -63,6 +63,10 @@ const Prism: React.FC<PrismProps> = ({
         const HOVSTR = Math.max(0, hoverStrength || 1);
         const INERT = Math.max(0, Math.min(1, inertia || 0.12));
 
+        // Reduce GPU load on mobile: fewer ray-march iterations
+        const isMobile = window.innerWidth < 768;
+        const STEPS = isMobile ? 60 : 100;
+
         const dpr = Math.min(2, window.devicePixelRatio || 1);
         const renderer = new Renderer({
             dpr,
@@ -79,7 +83,8 @@ const Prism: React.FC<PrismProps> = ({
             inset: '0',
             width: '100%',
             height: '100%',
-            display: 'block'
+            display: 'block',
+            pointerEvents: 'none'
         } as Partial<CSSStyleDeclaration>);
         container.appendChild(gl.canvas);
 
@@ -177,8 +182,7 @@ const Prism: React.FC<PrismProps> = ({
           wob = mat2(c0, c1, c2, c0);
         }
 
-        const int STEPS = 100;
-        for (int i = 0; i < STEPS; i++) {
+        for (int i = 0; i < ${STEPS}; i++) {
           p = vec3(f, z);
           p.xz = p.xz * wob;
           p = uRot * p;

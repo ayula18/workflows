@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
@@ -5,7 +6,7 @@ interface ChatFloatingButtonProps {
     onClick: () => void;
 }
 
-export default function ChatFloatingButton({ onClick }: ChatFloatingButtonProps) {
+export default memo(function ChatFloatingButton({ onClick }: ChatFloatingButtonProps) {
     return (
         <motion.button
             key="chat-toggle"
@@ -31,4 +32,4 @@ export default function ChatFloatingButton({ onClick }: ChatFloatingButtonProps)
             />
         </motion.button>
     );
-}
+});

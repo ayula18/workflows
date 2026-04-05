@@ -21,7 +21,7 @@ export default function WorkflowArchitecture({ nodes, techStack }: WorkflowArchi
                     <p className="text-lg text-slate-500 dark:text-gray-400 opacity-80 dark:opacity-60">From raw input to client-ready execution</p>
                 </div>
 
-                <div className="w-full relative rounded-2xl py-12 px-4 md:px-12 flex flex-col items-center overflow-hidden border border-slate-200 dark:border-white/5 shadow-lg dark:shadow-2xl bg-white dark:bg-[#0B0F19]">
+                <div className="w-full relative rounded-2xl py-12 px-4 md:px-12 flex flex-col items-center overflow-hidden border border-slate-200 dark:border-white/5 shadow-lg dark:shadow-2xl bg-white dark:bg-[var(--card-bg-solid)]">
                     {/* Abstract Architecture Diagram Background */}
                     <div className="absolute inset-0 bg-grid-white/[0.02] dark:bg-grid-white/[0.02]" />
 

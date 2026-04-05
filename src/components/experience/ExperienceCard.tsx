@@ -32,7 +32,7 @@ export default function ExperienceCard({
 }: ExperienceCardProps) {
     return (
         <SectionWrapper id={id} className={`py-12 md:py-16 ${className || ""}`}>
-            <div className="relative group w-[95%] max-[1200px]:w-full left-[2.5%] max-[1200px]:left-0 bg-white dark:bg-[#111111] backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-[2rem] p-6 md:p-8 lg:p-10 overflow-hidden shadow-lg dark:shadow-[0_0_80px_rgba(255,79,0,0.1)] mb-32 max-[900px]:mb-0">
+            <div className="relative group w-[95%] max-[1200px]:w-full left-[2.5%] max-[1200px]:left-0 bg-white dark:bg-[var(--card-bg-solid)] backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-[2rem] p-6 md:p-8 lg:p-10 overflow-hidden shadow-lg dark:shadow-[0_0_80px_rgba(255,79,0,0.1)] mb-32 max-[900px]:mb-0">
 
                 {/* Glow Effects */}
                 <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] opacity-20 blur-[100px] pointer-events-none rounded-full" />
@@ -94,7 +94,7 @@ export default function ExperienceCard({
                             />
 
                             {/* Subtle gradient overlay to fit the dark aesthetic better when not hovered */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-white/80 dark:from-[#111111]/80 via-transparent to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-white/80 dark:from-[var(--card-bg-solid)]/80 via-transparent to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
                         </div>
 
                         {/* Image Caption */}

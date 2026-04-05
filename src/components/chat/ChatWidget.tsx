@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, FormEvent } from "react";
+import { useState, useRef, useEffect, useCallback, FormEvent } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Message } from "./types";
 import ChatFloatingButton from "./ChatFloatingButton";
@@ -43,7 +43,11 @@ export default function ChatWidget() {
         return () => window.removeEventListener('open-chat-widget', handleOpenChat);
     }, []);
 
-    const sendMessage = async (e: FormEvent) => {
+    const handleOpen = useCallback(() => setIsOpen(true), []);
+    const handleClose = useCallback(() => setIsOpen(false), []);
+    const handleSetInput = useCallback((val: string) => setInput(val), []);
+
+    const sendMessage = useCallback(async (e: FormEvent) => {
         e.preventDefault();
         const trimmed = input.trim();
         if (!trimmed || isTyping) return;
@@ -113,13 +117,13 @@ export default function ChatWidget() {
         } finally {
             setIsTyping(false);
         }
-    };
+    }, [input, isTyping]);
 
     return (
         <>
             <AnimatePresence>
                 {!isOpen && (
-                    <ChatFloatingButton onClick={() => setIsOpen(true)} />
+                    <ChatFloatingButton onClick={handleOpen} />
                 )}
             </AnimatePresence>
 
@@ -129,26 +133,14 @@ export default function ChatWidget() {
                         messages={messages}
                         isTyping={isTyping}
                         input={input}
-                        setInput={setInput}
+                        setInput={handleSetInput}
                         sendMessage={sendMessage}
-                        onClose={() => setIsOpen(false)}
+                        onClose={handleClose}
                         messagesEndRef={messagesEndRef}
                         inputRef={inputRef}
                     />
                 )}
             </AnimatePresence>
-
-            {/* ── Keyframe for typing dots ── */}
-            <style jsx global>{`
-                @keyframes typingDot {
-                  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-                  30% { transform: translateY(-4px); opacity: 1; }
-                }
-
-                .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-                .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-                .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.5); border-radius: 4px; }
-            `}</style>
         </>
     );
 }

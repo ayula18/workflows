@@ -33,7 +33,7 @@ export default function GeneratedAssets({ assets }: GeneratedAssetsProps) {
 
                 <div className={`grid gap-8 w-full ${assets.rightCard ? "md:grid-cols-2" : "max-w-2xl mx-auto"}`}>
                     {/* Left Card - Google Sheets */}
-                    <div className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-xl flex flex-col pt-10 pb-10 bg-white dark:bg-[#0B0F19]">
+                    <div className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-xl flex flex-col pt-10 pb-10 bg-white dark:bg-[var(--card-bg-solid)]">
                         <div className="flex items-center gap-4 mb-4 text-[var(--accent)]">
                             <FileSpreadsheet className="w-8 h-8" />
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white">{assets.leftCard.title}</h3>
@@ -51,7 +51,7 @@ export default function GeneratedAssets({ assets }: GeneratedAssetsProps) {
 
                     {/* Right Card - Google Docs (Optional) */}
                     {assets.rightCard && (
-                        <div className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-xl flex flex-col pt-10 pb-10 bg-white dark:bg-[#0B0F19]">
+                        <div className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-xl flex flex-col pt-10 pb-10 bg-white dark:bg-[var(--card-bg-solid)]">
                             <div className="flex items-center gap-4 mb-4 text-[var(--accent)]">
                                 <FileText className="w-8 h-8" />
                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">{assets.rightCard.title}</h3>

@@ -19,7 +19,7 @@ export default function AutomationCard({ automation }: AutomationCardProps) {
 
     return (
         <Link href={`/automations/${automation.slug}`} className="group block h-full">
-            <div className="p-6 rounded-2xl h-full min-h-[285px] border border-slate-200 hover:border-[var(--accent)] dark:border-white/10 dark:hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden bg-white dark:bg-[#0B0F19] flex flex-col">
+            <div className="p-6 rounded-2xl h-full min-h-[285px] border border-slate-200 hover:border-[var(--accent)] dark:border-white/10 dark:hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden bg-white dark:bg-[var(--card-bg-solid)] flex flex-col">
                 {/* Hover Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-[var(--accent-secondary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 

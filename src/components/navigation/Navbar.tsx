@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { useScroll, useSpring, useTransform } from "framer-motion";
 import DesktopNav from "./DesktopNav";
@@ -20,14 +20,17 @@ export default function Navbar() {
 
     const maxWidth = useTransform(smoothY, [0, 120], ["1280px", "1024px"]);
 
+    const handleOpen = useCallback(() => setIsOpen(true), []);
+    const handleClose = useCallback(() => setIsOpen(false), []);
+
     return (
         <>
             <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">
                 <DesktopNav maxWidth={maxWidth} />
-                <MobileNavHeader onOpen={() => setIsOpen(true)} />
+                <MobileNavHeader onOpen={handleOpen} />
             </header>
 
-            <MobileNavSheet isOpen={isOpen} pathname={pathname} onClose={() => setIsOpen(false)} />
+            <MobileNavSheet isOpen={isOpen} pathname={pathname} onClose={handleClose} />
         </>
     );
 }

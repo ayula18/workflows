@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -11,7 +12,7 @@ interface SectionWrapperProps {
     delay?: number;
 }
 
-export default function SectionWrapper({
+export default memo(function SectionWrapper({
     children,
     className,
     id,
@@ -29,4 +30,4 @@ export default function SectionWrapper({
             {children}
         </motion.section>
     );
-}
+});

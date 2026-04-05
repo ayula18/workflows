@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { automations, categories, caseStudiesData, sectorThesisData } from "@/lib/data";
 import AutomationCard from "@/components/automation/AutomationCard";
@@ -10,27 +10,58 @@ import LibraryTabs, { TabId } from "@/components/automation/LibraryTabs";
 import CategorySidebar from "@/components/automation/CategorySidebar";
 import Pagination from "@/components/ui/Pagination";
 
+const ITEMS_PER_PAGE = 4;
+
 export default function AutomationLibrary() {
-    const allAutomations = Object.values(automations);
+    const allAutomations = useMemo(() => Object.values(automations), []);
     const [activeTab, setActiveTab] = useState<TabId>('automations');
     const [activeCategory, setActiveCategory] = useState<string>(categories[0].key);
-    
     const [currentPage, setCurrentPage] = useState(1);
-    const ITEMS_PER_PAGE = 4;
 
     useEffect(() => {
         setCurrentPage(1);
     }, [activeTab, activeCategory]);
 
-    const filteredAutomations = allAutomations.filter(a => a.category === activeCategory);
-    const paginatedAutomations = filteredAutomations.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
-    const totalAutomationPages = Math.ceil(filteredAutomations.length / ITEMS_PER_PAGE);
+    // Memoize derived data — these only recompute when their deps change
+    const filteredAutomations = useMemo(
+        () => allAutomations.filter(a => a.category === activeCategory),
+        [allAutomations, activeCategory]
+    );
 
-    const paginatedCaseStudies = caseStudiesData.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
-    const totalCaseStudiesPages = Math.ceil(caseStudiesData.length / ITEMS_PER_PAGE);
+    const paginatedAutomations = useMemo(
+        () => filteredAutomations.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE),
+        [filteredAutomations, currentPage]
+    );
 
-    const paginatedSectorThesis = sectorThesisData.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
-    const totalSectorThesisPages = Math.ceil(sectorThesisData.length / ITEMS_PER_PAGE);
+    const totalAutomationPages = useMemo(
+        () => Math.ceil(filteredAutomations.length / ITEMS_PER_PAGE),
+        [filteredAutomations.length]
+    );
+
+    const paginatedCaseStudies = useMemo(
+        () => caseStudiesData.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE),
+        [currentPage]
+    );
+
+    const totalCaseStudiesPages = useMemo(
+        () => Math.ceil(caseStudiesData.length / ITEMS_PER_PAGE),
+        []
+    );
+
+    const paginatedSectorThesis = useMemo(
+        () => sectorThesisData.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE),
+        [currentPage]
+    );
+
+    const totalSectorThesisPages = useMemo(
+        () => Math.ceil(sectorThesisData.length / ITEMS_PER_PAGE),
+        []
+    );
+
+    // Stable callback references
+    const handleTabChange = useCallback((tab: TabId) => setActiveTab(tab), []);
+    const handleCategoryChange = useCallback((cat: string) => setActiveCategory(cat), []);
+    const handlePageChange = useCallback((page: number) => setCurrentPage(page), []);
 
     return (
         <SectionWrapper id="library" className="py-20">
@@ -44,7 +75,7 @@ export default function AutomationLibrary() {
             </div>
 
             {/* Tab Navigation */}
-            <LibraryTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+            <LibraryTabs activeTab={activeTab} setActiveTab={handleTabChange} />
 
             {/* Tab Content */}
             <AnimatePresence mode="wait">
@@ -61,7 +92,7 @@ export default function AutomationLibrary() {
                             <CategorySidebar
                                 categories={categories}
                                 activeCategory={activeCategory}
-                                setActiveCategory={setActiveCategory}
+                                setActiveCategory={handleCategoryChange}
                             />
 
                             {/* Right Content Area */}
@@ -88,7 +119,7 @@ export default function AutomationLibrary() {
                                             <Pagination
                                                 currentPage={currentPage}
                                                 totalPages={totalAutomationPages}
-                                                onPageChange={setCurrentPage}
+                                                onPageChange={handlePageChange}
                                             />
                                         )}
                                     </motion.div>
@@ -108,7 +139,7 @@ export default function AutomationLibrary() {
                                 <Pagination
                                     currentPage={currentPage}
                                     totalPages={totalCaseStudiesPages}
-                                    onPageChange={setCurrentPage}
+                                    onPageChange={handlePageChange}
                                 />
                             )}
                         </>
@@ -125,7 +156,7 @@ export default function AutomationLibrary() {
                                 <Pagination
                                     currentPage={currentPage}
                                     totalPages={totalSectorThesisPages}
-                                    onPageChange={setCurrentPage}
+                                    onPageChange={handlePageChange}
                                 />
                             )}
                         </>

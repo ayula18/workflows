@@ -52,7 +52,7 @@ export default function PreviewPanel({ data }: PreviewPanelProps) {
     if (!data) return null;
 
     return (
-        <div className="rounded-2xl p-6 relative overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-2xl bg-white dark:bg-[#0B0F19]">
+        <div className="rounded-2xl p-6 relative overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-2xl bg-white dark:bg-[var(--card-bg-solid)]">
             <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20">
                     <Eye className="w-5 h-5 text-[var(--accent)]" />
