@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import ChatWidgetLoader from "@/components/chat/ChatWidgetLoader";
 import ThemeProvider from "@/components/theme/ThemeProvider";
+import LenisProvider from "@/components/providers/LenisProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,9 +40,11 @@ export default function RootLayout({
         className={`${inter.variable} ${dmMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <Navbar />
-          {children}
-          <ChatWidgetLoader />
+          <LenisProvider>
+            <Navbar />
+            {children}
+            <ChatWidgetLoader />
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>
