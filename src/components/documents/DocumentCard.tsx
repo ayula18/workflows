@@ -6,10 +6,14 @@ import TagPill from "@/components/ui/TagPill";
 export interface DocumentData {
     id: string;
     title: string;
-    problemStatement: string;
-    proposedSolution: string;
+    subtitle?: string;
+    problemStatement?: string;
+    proposedSolution?: string;
+    metricHighlight?: string;
+    externalLink?: string;
+    externalLinkText?: string;
     tags: string[];
-    pdfLink: string;
+    pdfLink?: string;
     pptLink?: string;
     gradientClass?: string;
     companyLogoUrl?: string;
@@ -24,8 +28,9 @@ interface DocumentCardProps {
 }
 
 export default function DocumentCard({ document }: DocumentCardProps) {
-    return (
-        <div className="group block h-full">
+    const isLinkCard = !!document.externalLink;
+
+    const CardContent = (
             <div className="rounded-2xl h-full border border-slate-200 dark:border-white/10 hover:border-[var(--accent)] transition-colors duration-300 relative overflow-hidden flex flex-col sm:flex-row bg-white dark:bg-[var(--card-bg-solid)]">
                 {/* Hover Glow Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-[var(--accent-secondary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0" />
@@ -74,32 +79,54 @@ export default function DocumentCard({ document }: DocumentCardProps) {
                             {document.title}
                         </h3>
 
+                        {document.subtitle && (
+                            <p className="font-medium text-slate-700 dark:text-gray-200 text-base mb-2">
+                                {document.subtitle}
+                            </p>
+                        )}
                         {/* Problem & Solution Text */}
                         <div className="space-y-3 mb-4 text-sm text-slate-500 dark:text-gray-400 opacity-90 leading-relaxed md:text-[15px]">
-                            <p>
-                                <span className="font-bold text-slate-900 dark:text-white tracking-wide uppercase text-xs">The Problem: </span>
-                                {document.problemStatement}
-                            </p>
-                            <p>
-                                <span className="font-bold text-slate-900 dark:text-white tracking-wide uppercase text-xs">{document.solutionLabel || "The Solution:"} </span>
-                                {document.proposedSolution}
-                            </p>
+                            {document.problemStatement && (
+                                <p>
+                                    <span className="font-bold text-slate-900 dark:text-white tracking-wide uppercase text-xs">The Problem: </span>
+                                    {document.problemStatement}
+                                </p>
+                            )}
+                            {document.proposedSolution && (
+                                <p>
+                                    <span className="font-bold text-slate-900 dark:text-white tracking-wide uppercase text-xs">{document.solutionLabel || "The Solution:"} </span>
+                                    {document.proposedSolution}
+                                </p>
+                            )}
+                            {document.metricHighlight && (
+                                <div className="mt-3 inline-block px-3 py-1.5 bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] rounded-lg text-sm font-semibold tracking-wide shadow-sm">
+                                    {document.metricHighlight}
+                                </div>
+                            )}
                         </div>
                     </div>
 
                     {/* Action Buttons */}
                     <div className="mt-4 pt-2 flex flex-wrap gap-3">
-                        <Link
-                            href={document.pdfLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 text-sm font-medium transition-all group/btn"
-                        >
-                            <span>View Deck (PDF)</span>
-                            <ExternalLink size={14} className="opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                        </Link>
+                        {document.externalLink && (
+                            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 text-sm font-medium transition-all group/btn">
+                                <span>{document.externalLinkText || "Read Case Study"}</span>
+                                <ExternalLink size={14} className="opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                            </span>
+                        )}
+                        {!document.externalLink && document.pdfLink && (
+                            <Link
+                                href={document.pdfLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 text-sm font-medium transition-all group/btn"
+                            >
+                                <span>View Deck (PDF)</span>
+                                <ExternalLink size={14} className="opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                            </Link>
+                        )}
 
-                        {document.pptLink && (
+                        {!document.externalLink && document.pptLink && (
                             <Link
                                 href={document.pptLink}
                                 target="_blank"
@@ -113,6 +140,15 @@ export default function DocumentCard({ document }: DocumentCardProps) {
                     </div>
                 </div>
             </div>
+    );
+
+    return isLinkCard ? (
+        <a href={document.externalLink} target="_blank" rel="noopener noreferrer" className="group block h-full">
+            {CardContent}
+        </a>
+    ) : (
+        <div className="group block h-full">
+            {CardContent}
         </div>
     );
 }

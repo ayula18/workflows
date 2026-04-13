@@ -1153,6 +1153,18 @@ import { DocumentData } from "@/components/documents/DocumentCard";
 
 export const caseStudiesData: DocumentData[] = [
     {
+        id: "cs-0",
+        title: "The 4-Axis Product Tradeoff Framework",
+        problemStatement: "Every product leader knows the Iron Triangle: Money, Time, Quality. Pick two, sacrifice one. But this framework is flat. It treats building as pure resource allocation and ignores the human force that determines whether a team survives that sacrifice.",
+        proposedSolution: "Working from a rough whiteboard sketch by an industry leader, I extended the framework with original research and built an interactive 3D visualization mapping real companies onto the framework.",
+        tags: ["PRODUCT STRATEGY", "INTERACTIVE"],
+        externalLink: "https://product-framework.vercel.app/",
+        externalLinkText: "Explore the framework",
+        gradientClass: "bg-gradient-to-br from-orange-500/20 to-rose-500/10",
+        companyName: "Framework",
+        logoBgColor: "#1e293b",
+    },
+    {
         id: "cs-1",
         title: "Mosaic's AI Creative Engine: Scaling ROAS & Market Share",
         problemStatement: "Manual, intuition-driven workflows severely bottlenecked ad creation, taking over 48 hours to research, script, and source influencers per campaign.",

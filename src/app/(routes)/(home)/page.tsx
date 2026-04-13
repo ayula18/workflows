@@ -18,10 +18,10 @@ export default function Home() {
         itemStackDistance={40}
       >
         <ScrollStackItem itemClassName="h-auto">
-          <MesaExperience />
+          <EngineeringExperience />
         </ScrollStackItem>
         <ScrollStackItem itemClassName="h-auto">
-          <EngineeringExperience />
+          <MesaExperience />
         </ScrollStackItem>
       </ScrollStack>
       <AutomationLibrary />
